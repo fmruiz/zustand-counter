@@ -4,7 +4,7 @@ import useCounterStore from "./zustand/counter-store";
 
 function App() {
   // states from zustand
-  const { count, increment, decrement } = useCounterStore((state) => state);
+  const { count, increment, decrement, reset, double } = useCounterStore((state) => state);
 
   return (
     <div className="App">
@@ -13,6 +13,8 @@ function App() {
         <span>Counter: {count}</span>
         <div className="buttons__counters">
           <button onClick={() => increment()}>+1</button>
+          <button onClick={() => reset()}>Reset</button>
+          <button onClick={() => double()}>Double</button>
           <button onClick={() => decrement()}>-1</button>
         </div>
       </header>
